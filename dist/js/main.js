@@ -471,7 +471,7 @@
             this.modal.init.call(this);
 
             // Bind to Window State Change
-            History.Adapter.bind(window,'statechange',function(){
+            History.Adapter.bind(window, 'statechange', function(){
                 var State = History.getState();
 
                 if( self.navigationUsed !== true ) {
@@ -495,6 +495,7 @@
         modal: {
 
             init: function() {
+                var self = this;
 
                 // Grab elements from DOM
                 this.modal.content = $("#overlay");
