@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="http://localhost/portfolio/dist/">
+
+        <title>Portfolio</title>
+
+        <link href="//fonts.googleapis.com/css?family=Megrim|Trocchi" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+
+        <!--[if lt IE 9]>
+            <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <body>
+
+        <script>document.body.setAttribute("class", "hasJS");</script>
+
+        <div class="wrapper">
+
+            <header>
+
+                <h1>Paul <span>de</span> Vries</h1>
+                <h2><span>Frontend</span> <span>Developer</span></h2>
+
+                <div class="logo">
+                    <img src="img/logo.svg" alt="Paul de Vries" id="me">
+                    <img src="img/helmet.svg" alt="Boba Fett" id="helmet">
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#cv">CV</a></li>
+                    </ul>
+                </nav>
+
+            </header>
+
+            <main data-indicator="Portfolio">
+
+                <article id="portfolio">
+                    <h1>Portfolio</h1>
+                    <ul>
+                        <li data-id="ddgc">
+                            <section id="ddgc">
+                                <h1>De Digitale Gesprekscyclus</h1>
+
+                                <div class="browser main">
+                                    <div class="header">
+                                        <span class="dot"></span>
+                                        <span class="input">ddgc.nl</span>
+                                    </div>
+                                    <div class="frame">
+                                        <a href="project/ddgc/">
+                                            <img src="img/portfolio/ddgc/big.jpg" alt="">
+                                            <svg class="overlay"></svg>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="browser small left">
+                                    <div class="header">
+                                        <span class="dot"></span>
+                                        <span class="input">ddgc.nl</span>
+                                    </div>
+                                    <div class="frame">
+                                        <img src="img/portfolio/ddgc/small-1.jpg" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="browser small right">
+                                    <div class="header">
+                                        <span class="dot"></span>
+                                        <span class="input">app.ddgc.nl</span>
+                                    </div>
+                                    <div class="frame">
+                                        <img src="img/portfolio/ddgc/small-2.jpg" alt="">
+                                    </div>
+                                </div>
+
+                            </section>
+                        </li>
+                        <li data-id="ct">
+                            <section id="ct">
+                                <h1>Competentie Thermometer</h1>
+
+                                <div class="browser main">
+                                    <div class="header">
+                                        <span class="dot"></span>
+                                        <span class="input">ctmeter.nl</span>
+                                    </div>
+                                    <div class="frame">
+                                        <a href="project/ct/">
+                                            <img src="img/portfolio/ct/big.jpg" alt="">
+                                            <svg class="overlay"></svg>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="browser small left">
+                                    <div class="header">
+                                        <span class="dot"></span>
+                                        <span class="input">app.ctmeter.nl</span>
+                                    </div>
+                                    <div class="frame">
+                                        <img src="img/portfolio/ct/small-1.jpg" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="browser ipad small right">
+                                    <div class="header">
+                                        <span class="dot"></span>
+                                        <span class="input">app.ctmeter.nl</span>
+                                    </div>
+                                    <div class="frame">
+                                        <img src="img/portfolio/ct/small-2.jpg" alt="">
+                                    </div>
+                                </div>
+
+                            </section>
+                        </li>
+                    </ul>
+                </article>
+
+                <article id="about" data-indicator="About">
+                    <h1>Some more about me</h1>
+                    <div class="column">
+                        <p>I have been engrossed in web design &amp; development since the late-90s, starting in my early teenage years. It’s a passion and I love it.</p>
+                        <p>My first website was a simple fan site for the movie Star Wars released in ‘99. Since then I couldn’t stop building anything web related. I took on any project and didn’t focus on one skill.</p>
+                        <p>In the years to follow I knew I wanted to make this my proffesion. So I had to make a decission on what I liked doing most.</p>
+                    </div>
+                    <div class="column">
+                        <p>I really liked designing but more I liked coding the design into something workable. I am very passioned in this and eventuelly this passion passed on to projects involving offline devices.</p>
+                        <p>I start design my own printboards and start coding in C++. I also start learning to make 3D objects. However this remains my hobby.</p>
+                        <p>My real focus went to frontend development. I love HTML5, JS, and CSS. I'm also not shy of using tools like Grunt.</p>
+                    </div>
+                    <hr>
+                </article>
+
+                <div class="relative">
+                    <article id="skills" data-indicator="Skills">
+                        <div class="main">
+                            <h1>Skills</h1>
+                            <ol>
+                                <li id="frontend">
+                                    <h2>Front-end</h2>
+                                    <ul>
+                                        <li data-image="img/skills/html5.svg" data-experience="9">HTML5</li>
+                                        <li data-image="img/skills/css3.svg" data-experience="9">CSS3</li>
+                                        <li data-image="img/skills/javascript.svg" data-experience="9">Javascript</li>
+                                        <li data-image="img/skills/javascript.svg" data-experience="8">JSON/AJAX</li>
+                                    </ul>
+                                </li>
+                                <li id="backend">
+                                    <h2>Back-end</h2>
+                                    <ul>
+                                        <li data-image="img/skills/php.svg" data-experience="7">PHP</li>
+                                        <li data-image="img/skills/mysql.svg" data-experience="6">MySQL</li>
+                                        <li data-image="img/skills/symfony.svg" data-experience="5">Symfony2</li>
+                                        <li data-image="img/skills/modx.svg" data-experience="9">MODx</li>
+                                        <li data-image="img/skills/wordpress.svg" data-experience="7">Wordpress</li>
+                                    </ul>
+                                </li>
+                                <li id="libraries">
+                                    <h2>Libraries</h2>
+                                    <ul>
+                                        <li data-image="img/skills/angularjs.svg" data-experience="8">AngularJS</li>
+                                        <li data-image="img/skills/jquery.svg" data-experience="8">jQuery</li>
+                                        <li data-image="img/skills/mootools.svg" data-experience="8">MooTools</li>
+                                        <li data-image="img/skills/sencha.svg" data-experience="7">ExtJS/Sencha</li>
+                                        <li data-image="img/skills/pouchdb.svg" data-experience="8">PouchDB</li>
+                                    </ul>
+                                </li>
+                                <li id="tools">
+                                    <h2>Tools</h2>
+                                    <ul>
+                                        <li data-image="img/skills/sass.svg" data-experience="9">SASS &amp; LESS</li>
+                                        <li data-image="img/skills/nodejs.svg" data-experience="7">NodeJS</li>
+                                        <li data-image="img/skills/grunt.svg" data-experience="9">Grunt/Gulp</li>
+                                        <li data-image="img/skills/bower.svg" data-experience="8">Bower</li>
+                                        <li data-image="img/skills/git.svg" data-experience="8">Git(Hub)</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                        <svg id="skillsMain"></svg>
+                        <svg id="skillsSun"></svg>
+                        <svg id="skillsMoons"></svg>
+                        <svg id="skillsOrbit"></svg>
+                        <svg id="skillsText"></svg>
+
+                    </article>
+                </div>
+
+                <article id="cv" data-indicator="Curriculum Vitae">
+                    <h1>Curriculum Vitae</h1>
+
+                    <div id="timeline">
+                        <span class="year">2015</span>
+                        <ol>
+                            <li>
+                                <section class="left active">
+                                    <h1>Front-end developer <span>Qaraqter B.V.</span></h1>
+                                    <h2>January 2009 - August 2015</h2>
+                                    <p>For a duration of 5 years I created a web-based application and a web-based iPad application with technologies like manifest and localstorage.</p>
+                                </section>
+                            </li>
+                            <li>
+                                <section class="right active">
+                                    <h1>Front-end developer <span>Aerosol Webdesign</span></h1>
+                                    <h2>June 2009 - Junuary 2009</h2>
+                                    <p>After making the decision to try something differently I tried working from my home with some really cool projects both on front-end development and design.</p>
+                                </section>
+                            </li>
+                            <li>
+                                <section class="left active">
+                                    <h1>Front-end developer <span>Enof</span></h1>
+                                    <h2>July 2008 – June 2009</h2>
+                                    <p>Enof ontwerp + communicatie is a full service agency with a lot of creativity in house. I was responsible for front-end development and for the integration into open-source CMS's such as Joomla or Wordpress.</p>
+                                </section>
+                            </li>
+                            <li>
+                                <section class="right active">
+                                    <h1>Webdesigner <span>Proximedia</span></h1>
+                                    <h2>June 2006 – July 2008</h2>
+                                    <p>Proximedia was my first opportunity to work as a professional webdesigner. I was solely responsible for building a complete website in one day including aftercare and support.</p>
+                                </section>
+                            </li>
+                        </ol>
+                        <span class="year">2008</span>
+                    </div>
+                </article>
+
+
+                <footer id="contact" data-indicator="Contact">
+
+                    <div class="column">
+                        <h1>Paul de Vries</h1>
+                        <p class="address">Zebraspoor 207,<br>3605GL Maarssen.</p>
+                        <p class="birth hidden">28 / 05 / 1986</p>
+                        <p class="phone hidden">06 - 55 104 352</p>
+                        <p>
+                            <a href="mailto:cv@blacktower.nl" class="mail">cv@blacktower.nl</a>
+                            <a href="https://nl.linkedin.com/in/prdevries" class="linked">LinkedIn</a>
+                            <a href="https://github.com/BillyBlaze" class="github">GitHub</a>
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="hidden">
+                        <p><strong>Grafisch Lyceum Utrecht.</strong><br>Desktop Publishing, 2003</p>
+                        <p><strong>Broeckland College.</strong><br>Highschool, 2001</p>
+                    </div>
+
+                </footer>
+
+            </main>
+
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="js/vendors.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
