@@ -1,0 +1,59 @@
+@media screen {
+    @import 'bootstrap.less';
+    @import 'mixin.less';
+    @import 'variables.less';
+
+    @import 'layout/grid.less';
+    @import 'layout/layout.less';
+
+    @import 'layout/header.less';
+    @import 'layout/about.less';
+    @import 'layout/portfolio.less';
+    @import 'layout/skills.less';
+    @import 'layout/cv.less';
+    @import 'layout/contact.less';
+    @import 'layout/browser-frame.less';
+
+    svg, svg:hover {
+        shape-rendering: geometricPrecision;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    .hasJS {
+
+        header {
+            h1 {
+                transform: matrix(1, 0, 0, 1, -5000, 0);
+            }
+            h2, .logo img {
+                transform: matrix(1, 0, 0, 1, 0, -100);
+                opacity: 0;
+            }
+            .logo img {
+                transform: matrix(1, 0, 0, 1, 0, -200);
+            }
+        }
+
+        @media (min-width: @screen-responsive-min) {
+            #skills {
+                margin: 200px auto 400px;
+
+                svg {
+                    display: block;
+                }
+                ol, h2, .main {
+                    display: none;
+                }
+            }
+        }
+
+
+    }
+}
+
+@media print {
+    @import 'layout/print.less';
+}

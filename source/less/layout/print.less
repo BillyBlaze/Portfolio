@@ -1,0 +1,229 @@
+hr,
+#close,
+svg,
+img,
+:after,
+#about,
+#portfolio,
+header nav,
+header div {
+    display: none;
+}
+
+* {
+    font: 18px/24px Arial;
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4 {
+    font-weight: bold;
+}
+
+#cv > h1,
+#skills h1 {
+    font-family: 'Megrim', cursive;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    border-bottom: 1px solid black;
+    padding: 0 0 15px;
+    margin: 0 0 10px;
+}
+
+.wrapper {
+    position: relative;
+}
+
+header {
+    position: absolute;
+    top: 20px;
+    margin: 0 !important;
+    width: 100%;
+
+    h1, h2 {
+        text-align: center;
+    }
+
+    h1, h1 span, h2 span {
+        font-family: 'Megrim', cursive;
+        font-size: 56px;
+        line-height: 55px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0 !important;
+    }
+    h2 span {
+        font-size: 36px;
+    }
+}
+
+#contact {
+
+    h1 {
+        display: none;
+    }
+
+    > .hidden {
+        position: absolute;
+        right: 0;
+        top: 150px;
+        width: 50%;
+
+        &:before {
+            display: block;
+            width: 100%;
+            content: "Education";
+            font-family: 'Megrim', cursive;
+            font-weight: bold;
+            font-size: 32px;
+            text-transform: uppercase;
+            text-align: right;
+
+            border-bottom: 1px solid black;
+            padding: 0 0 15px;
+            margin: 50px 0 20px;
+        }
+
+        p {
+            text-align: right;
+            margin-bottom: 10px;
+
+            strong {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .column {
+        position: absolute;
+        left: 0;
+        top: 150px;
+        width: 50%;
+
+        &:before {
+            display: block;
+            width: 100%;
+            content: "Personal";
+            font-family: 'Megrim', cursive;
+            font-weight: bold;
+            font-size: 32px;
+            text-transform: uppercase;
+
+            border-bottom: 1px solid black;
+            padding: 0 0 15px;
+            margin: 50px 0 20px;
+            float:left;
+        }
+
+        p {
+            padding-left: 150px;
+
+            &:before,
+            a:before {
+                left: 0;
+                position: absolute;
+            }
+        }
+
+        p.address {
+            clear: both;
+
+            &:before {
+                content: "Address:";
+            }
+        }
+
+        p.birth {
+            &:before {
+                content: "Born:";
+            }
+        }
+        p.phone {
+            &:before {
+                content: "Mobile:";
+            }
+        }
+        p a.mail {
+            text-decoration: none;
+            &:before {
+                content: "Email:";
+            }
+        }
+
+        .linked, .github {
+            display: none;
+        }
+    }
+}
+
+#cv {
+    position: absolute;
+    top: 410px;
+    left: 0;
+
+    span.year {
+        display: none;
+    }
+
+    > h1 {
+        margin: 40px 0 5px;
+    }
+
+    ol {
+
+        li {
+            position: relative;
+            margin: 20px 0 40px;
+
+            h1 {
+                float: left;
+            }
+            h2 {
+                float: right;
+            }
+            p {
+                margin-top: 5px;
+            }
+            h1, p {
+                margin-left: 150px;
+                clear:both;
+
+                span {
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    width: 130px;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+#skills {
+    position: absolute;
+    top: 1150px;
+    width: 100%;
+
+    ol {
+        display: block;
+        width: 100%;
+
+        > li {
+            list-style: none;
+            float: left;
+            width: 23%;
+            margin: 0 1%;
+
+            ul {
+                list-style: disc;
+
+                li {
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}

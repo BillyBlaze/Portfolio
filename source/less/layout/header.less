@@ -1,0 +1,99 @@
+header {
+    // margin: 20% auto;
+    margin: 320px auto;
+
+    h1, h2 {
+        font-family: @main-font;
+        font-size: 72px;
+        text-transform: uppercase;
+        color: white;
+
+        margin: 0;
+        text-align: center;
+        position: relative;
+
+        @media (min-width: @screen-responsive-min) {
+            span {
+                margin: 0 80px;
+            }
+        }
+
+    }
+
+    @media (max-width: @screen-responsive-max) {
+        padding-top: 140px;
+
+        h1 {
+            font-size: 13vw;
+        }
+        h2 {
+            font-size: 6vw !important;
+        }
+    }
+
+    h2 {
+        font-size: 37px;
+        text-transform: lowercase;
+
+        @media (min-width: @screen-responsive-min) {
+            span {
+                &:first-child {
+                    margin: 0 135px 0 0;
+                }
+                &:last-child {
+                    margin: 0 0 0 140px;
+                }
+            }
+        }
+
+    }
+
+    .logo {
+        position:relative;
+        top: -130px;
+        cursor: pointer;
+
+        @media (max-width: @screen-responsive-max) {
+            top: -370px;
+        }
+
+        img {
+            position: absolute;
+            top: -70px;
+            left: 50%;
+
+            width: 219px;
+            margin-left: -116px;
+
+            &#helmet {
+                opacity: 0;
+            }
+        }
+    }
+
+    nav {
+        display: none;
+    }
+
+}
+
+header,
+#about,
+#contact {
+    position: relative;
+
+    &:before {
+        content: "";
+        display: block;
+        height: 740px;
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: -300px;
+        left: -100%;
+        right: -100%;
+
+        -ms-transform: rotate(-12deg); /* IE 9 */
+        -webkit-transform: rotate(-12deg); /* Chrome, Safari, Opera */
+        transform: rotate(-12deg);
+    }
+}

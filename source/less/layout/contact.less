@@ -1,0 +1,160 @@
+#contact {
+    padding: 0 0 80px;
+    margin: 360px auto 0;
+
+    &:before {
+        height: 300%;
+        top: -160px;
+    }
+
+    h1, .column {
+        width: auto;
+        float: right;
+        clear: right;
+    }
+    h1, p {
+        margin: 0;
+        padding: 0 0 30px !important;
+    }
+
+    a {
+        &.github {
+            background: url(../img/github.svg) center center no-repeat;
+            background-size: 38px auto;
+        }
+        &.mail {
+            background: url(../img/email.svg) center center no-repeat;
+            background-size: 30px auto;
+        }
+        &.linked {
+            background: url(../img/linkedin.svg) center center no-repeat;
+            background-size: 22px auto;
+        }
+
+        display: block;
+        float: left;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        color: black;
+        text-indent: -5000px;
+        margin-right: 10px;
+
+        background-color: rgba(255,255,255,0.7) !important;
+
+        &:hover {
+            background-color: white !important;
+        }
+
+    }
+
+    h1 {
+        float: left;
+    }
+    p {
+        float: right;
+    }
+    h1 + p {
+        clear: left;
+        float: left;
+    }
+
+    + hr {
+        visibility: hidden;
+        margin: 0;
+        border: 0;
+    }
+
+    #rocket {
+        width: 60%;
+        height: 460px;
+    }
+
+    #cloud, #rocket {
+        position: absolute;
+        bottom: 0;
+        left: -20%;
+
+        circle, ellipse {
+            -webkit-transition: transform 2s ease-out; /* Safari */
+            transition: transform 2s ease-out;
+
+            transform-origin: 50% 50%;
+            transform: matrix(1, 0, 0, 1, 0, 80) scale(0);
+
+            &:nth-of-type(8n+1) {
+                transition-duration: 2.5s;
+            }
+            &:nth-of-type(8n+2) {
+                transition-duration: 2s;
+            }
+            &:nth-of-type(8n+3) {
+                transition-duration: 1.5s;
+            }
+            &:nth-of-type(8n+4) {
+                transition-duration: 2.2s;
+            }
+            &:nth-of-type(8n+5) {
+                transition-duration: 1.2s;
+            }
+            &:nth-of-type(8n+6) {
+                transition-duration: 1.8s;
+            }
+            &:nth-of-type(8n+7) {
+                transition-duration: 2.3s;
+            }
+            &:nth-of-type(8n+8) {
+                transition-duration: 1.9s;
+            }
+        }
+
+        &.active {
+            circle, ellipse {
+                transform: matrix(1, 0, 0, 1, 0, 0) scale(1);
+            }
+        }
+    }
+
+    @media (max-width: @screen-xs-max) {
+
+        .column {
+            width: auto;
+            float: right;
+            top: -80px;
+            right: 10px;
+
+            h1 {
+                margin: 0 10px 10px 0;
+                padding: 0 !important;
+            }
+
+            p {
+                width: 100%;
+                float: none;
+                padding: 0 0 10px !important;
+            }
+        }
+
+    }
+    @media (max-width: @screen-sm-max) {
+
+        .column {
+            width: auto;
+            float: right;
+            top: -50px;
+            right: 10px;
+
+            h1 {
+                margin: 0 10px 10px 0;
+                padding: 0 !important;
+            }
+
+            h1 + p {
+                padding: 0 15px 10px 0 !important;
+
+            }
+        }
+
+    }
+
+}

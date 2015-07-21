@@ -1,0 +1,59 @@
+body{
+    background: black url(../img/nebula.jpg) 50% 0 repeat-y fixed;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    overflow: hidden;
+    position: relative;
+    background: transparent url(../img/stars.svg) 50% 0 repeat fixed;
+}
+
+h1,
+text {
+    font-family: @main-font;
+    font-size: 72px;
+    text-transform: uppercase;
+    color: white;
+}
+
+@media (min-width: 2600px) {
+
+    .wrapper {
+
+        &:before {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 900px;
+            bottom: 0px;
+
+            content:"";
+            background: -moz-linear-gradient(left, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0)));
+            background: -webkit-linear-gradient(left, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+            background: -o-linear-gradient(left, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+            background: -ms-linear-gradient(left, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+            background: linear-gradient(to right, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+        }
+
+        &:after {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 900px;
+            bottom: 0px;
+
+            content:"";
+            background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65)));
+            background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+            background: -o-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+            background: -ms-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+            background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+        }
+
+    }
+
+
+}

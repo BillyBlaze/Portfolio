@@ -1,0 +1,62 @@
+#about,
+#contact {
+    padding: 0 0 400px;
+
+    h1, .column {
+        position: relative;
+        z-index: 2;
+    }
+
+    h1 {
+        margin: 0 60px;
+        text-transform: lowercase;
+    }
+
+    &:before {
+        height: 100%;
+        top: -220px;
+        bottom: 0;
+    }
+
+    p {
+        font-family: 'Trocchi', serif;
+        font-size: 20px;
+        color: white;
+    }
+
+    .column {
+        width: 50%;
+        float: left;
+
+        p {
+            display: block;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+    }
+
+    hr {
+        display: block;
+        width: 100%;
+        height: 1px;
+        clear: both;
+        visibility: hidden;
+    }
+
+    @media (max-width: @screen-sm-max) {
+        .column {
+            width: 100%;
+            float: none;
+
+            p {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+        }
+        h1 {
+            font-size: 7vw;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+    }
+}
