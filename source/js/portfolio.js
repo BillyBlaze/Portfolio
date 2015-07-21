@@ -39,87 +39,10 @@
         init: function() {
             var self = this;
 
-            this.modal.content = $("#overlay");
-            this.modal.inner = $("#inner-overlay");
-            this.modal.background = $("#overlay-bg");
-            this.modal.close = $("#close");
+            //Setup modal
+            this.modal.init.call(this);
 
-            if(this.modal.content.length === 0) {
-                this.modal.content = $("<aside></aside>").attr("id", "overlay").appendTo("body > .wrapper");
-            }
-            if(this.modal.inner.length === 0) {
-                this.modal.inner = $("<div></div>").attr("id", "overlay-inner").appendTo(this.modal.content);
-            }
-            if(this.modal.background.length === 0) {
-                this.modal.background = $("<div></div>").attr("id", "overlay-bg").appendTo("body > .wrapper");
-            }
-            if(this.modal.close.length === 0) {
-                this.modal.close = $("<div></div>").attr("id", "close").text("X").insertBefore(this.modal.inner);
-            }
-
-            $('.frame a svg').each(function(ind, elm) {
-
-                self.canvas.overlay[ind] = Snap(elm);
-                self.overlays[ind] = self.canvas.overlay[ind].attr({ viewBox: "0 0 702 413" });
-
-                var text = self.canvas.overlay[ind].text("50%", 230, "More info").attr(self.attributes.textMask),
-                    textWhite = self.canvas.overlay[ind].text("50%", 230, "More info").attr(self.attributes.rectFill),
-                    fill = self.canvas.overlay[ind].rect(-50, -50, 702+100, 413+100).attr(self.attributes.rectFill),
-                    loadFill = self.canvas.overlay[ind].rect(-50, -50, 702+100, 413+100).attr(self.attributes.rectFill),
-                    bg = self.canvas.overlay[ind].rect(-50, -50, 702+100, 413+100).attr(self.attributes.overlayFill);
-
-                // Group cicles
-                var bgGroup = self.canvas.overlay[ind].group(fill, text),
-                    loadGroup = self.canvas.overlay[ind].group(loadFill);
-
-                // Group mask
-                var bgMaskGroup = self.canvas.overlay[ind].group(bg),
-                    loadMaskGroup = self.canvas.overlay[ind].group(textWhite),
-                    loadText = self.canvas.overlay[ind].text("50%", 280, "Loading meta data...").attr({
-                        fill: "#FFF",
-                        class: "loadIndicator"
-                    })
-
-                // Apply Masks
-                bgMaskGroup.attr({
-                  mask: bgGroup
-                });
-                loadMaskGroup.attr({
-                  mask: loadGroup
-                });
-
-                // Center text
-                text.attr({
-                    x: 351 - (text.getBBox().width/2)
-                });
-                textWhite.attr({
-                    x: 351 - (textWhite.getBBox().width/2)
-                });
-                loadText.attr({
-                    x: 351 - (loadText.getBBox().width/2)
-                });
-
-                var bbox = textWhite.getBBox();
-                loadFill.attr({
-                    width: bbox.width,
-                    height: bbox.height,
-                    x: bbox.x,
-                    y: bbox.y + bbox.height,
-
-                    'data-height': bbox.height,
-                    'data-y': bbox.y
-                })
-
-                $(elm).parent().click(function(e) {
-                    e.preventDefault();
-
-                    self.navigationUsed = true;
-                    self.events.preload.call(self, $(elm).parent().attr("href"))
-                });
-
-            });
-
-            // Bind to State Change
+            // Bind to Window State Change
             History.Adapter.bind(window,'statechange',function(){
                 var State = History.getState();
 
@@ -139,6 +62,96 @@
 
             });
 
+        },
+
+        modal: {
+
+            init: function() {
+
+                // Grab elements from DOM
+                this.modal.content = $("#overlay");
+                this.modal.inner = $("#inner-overlay");
+                this.modal.background = $("#overlay-bg");
+                this.modal.close = $("#close");
+
+                // Create DOM elements if non existing
+                if(this.modal.content.length === 0) {
+                    this.modal.content = $("<aside></aside>").attr("id", "overlay").appendTo("body > .wrapper");
+                }
+                if(this.modal.inner.length === 0) {
+                    this.modal.inner = $("<div></div>").attr("id", "overlay-inner").appendTo(this.modal.content);
+                }
+                if(this.modal.background.length === 0) {
+                    this.modal.background = $("<div></div>").attr("id", "overlay-bg").appendTo("body > .wrapper");
+                }
+                if(this.modal.close.length === 0) {
+                    this.modal.close = $("<div></div>").attr("id", "close").text("X").insertBefore(this.modal.inner);
+                }
+
+                // Loop through all svg and add the overlay function
+                $('.frame a svg').each(function(ind, elm) {
+
+                    self.canvas.overlay[ind] = Snap(elm);
+                    self.overlays[ind] = self.canvas.overlay[ind].attr({ viewBox: "0 0 702 413" });
+
+                    var text = self.canvas.overlay[ind].text("50%", 230, "More info").attr(self.attributes.textMask),
+                        textWhite = self.canvas.overlay[ind].text("50%", 230, "More info").attr(self.attributes.rectFill),
+                        fill = self.canvas.overlay[ind].rect(-50, -50, 702+100, 413+100).attr(self.attributes.rectFill),
+                        loadFill = self.canvas.overlay[ind].rect(-50, -50, 702+100, 413+100).attr(self.attributes.rectFill),
+                        bg = self.canvas.overlay[ind].rect(-50, -50, 702+100, 413+100).attr(self.attributes.overlayFill);
+
+                    // Group cicles
+                    var bgGroup = self.canvas.overlay[ind].group(fill, text),
+                        loadGroup = self.canvas.overlay[ind].group(loadFill);
+
+                    // Group mask
+                    var bgMaskGroup = self.canvas.overlay[ind].group(bg),
+                        loadMaskGroup = self.canvas.overlay[ind].group(textWhite),
+                        loadText = self.canvas.overlay[ind].text("50%", 280, "Loading meta data...").attr({
+                            fill: "#FFF",
+                            class: "loadIndicator"
+                        })
+
+                    // Apply Masks
+                    bgMaskGroup.attr({
+                      mask: bgGroup
+                    });
+                    loadMaskGroup.attr({
+                      mask: loadGroup
+                    });
+
+                    // Center text
+                    text.attr({
+                        x: 351 - (text.getBBox().width/2)
+                    });
+                    textWhite.attr({
+                        x: 351 - (textWhite.getBBox().width/2)
+                    });
+                    loadText.attr({
+                        x: 351 - (loadText.getBBox().width/2)
+                    });
+
+                    var bbox = textWhite.getBBox();
+                    loadFill.attr({
+                        width: bbox.width,
+                        height: bbox.height,
+                        x: bbox.x,
+                        y: bbox.y + bbox.height,
+
+                        'data-height': bbox.height,
+                        'data-y': bbox.y
+                    })
+
+                    $(elm).parent().click(function(e) {
+                        e.preventDefault();
+
+                        self.navigationUsed = true;
+                        self.events.preload.call(self, $(elm).parent().attr("href"))
+                    });
+
+                });
+
+            }
         },
 
         tween: {},

@@ -29,22 +29,16 @@
             planets: {
 
                 text: {
-                    // fill: "rgba(255,255,255,0.4)"
-                    // fill: "#80b2d8"
                     fill: "#CCC"
                 },
 
                 objects: {
-                    // fill: "rgba(255,255,255,0.4)",
-                    // fill: "#80b2d8",
                     fill: "#888",
                     strokeWidth: 0
                 },
 
                 orbits: {
                     fill: "none",
-                    // stroke: "rgba(255,255,255,0.4)",
-                    // stroke: "#80b2d8",
                     stroke: "#888",
                     strokeWidth: 1
                 }
@@ -52,13 +46,10 @@
             },
 
             hover: {
-                // fill: "rgba(255,255,255,1)"
-                // fill: "#FFF"
                 fill: "#FFF"
             },
 
             unhover: {
-                // fill: "rgba(255,255,255,0.4)"
                 fill: "#888"
             },
 

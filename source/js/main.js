@@ -3,7 +3,6 @@
     // var debug = true;
     var debug = false;
     var options = (debug === true) ? { addIndicators: true } : {};
-
     var scrolling = {
         controller: new ScrollMagic.Controller(options),
 
