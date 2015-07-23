@@ -79,8 +79,9 @@
             -webkit-transition: transform 2s ease-out; /* Safari */
             transition: transform 2s ease-out;
 
-            transform-origin: 50% 50%;
             transform: matrix(1, 0, 0, 1, 0, 80) scale(0);
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
 
             &:nth-of-type(8n+1) {
                 transition-duration: 2.5s;

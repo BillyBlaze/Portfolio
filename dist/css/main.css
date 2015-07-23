@@ -225,7 +225,6 @@
   header .logo {
     position: relative;
     top: -130px;
-    cursor: pointer;
   }
   header .logo img {
     position: absolute;
@@ -402,28 +401,100 @@
     width: 100%;
     overflow-y: scroll;
   }
+  #overlay footer,
+  #overlay-bg footer {
+    position: relative;
+    background: white;
+    z-index: 7;
+    padding: 70px 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  #overlay footer h1,
+  #overlay-bg footer h1 {
+    font-family: 'Trocchi', serif;
+    font-size: 20px;
+    line-height: 28px;
+    color: black;
+  }
+  #overlay footer .column,
+  #overlay-bg footer .column {
+    width: 50%;
+    float: left;
+    overflow: hidden;
+  }
+  #overlay footer .column .tag,
+  #overlay-bg footer .column .tag {
+    float: left;
+    padding: 6px 4px 6px 8px;
+    background-color: black;
+    color: white;
+    margin-right: 25px;
+    margin-bottom: 5px;
+    position: relative;
+  }
+  #overlay footer .column .tag:after,
+  #overlay-bg footer .column .tag:after {
+    content: "";
+    border: 15px solid black;
+    position: relative;
+    border-bottom: 14px solid transparent;
+    border-top: 15px solid transparent;
+    border-right: 5px solid transparent;
+    width: 0px;
+    height: 0px;
+    display: block;
+    top: 0;
+    position: absolute;
+    right: -20px;
+  }
+  #overlay footer .image,
+  #overlay-bg footer .image {
+    width: 50%;
+    float: right;
+  }
+  #overlay footer .image a.btn,
+  #overlay-bg footer .image a.btn {
+    font-family: 'Trocchi', serif;
+    float: right;
+    width: 310px;
+    background-color: #00a2ff;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+    font-size: 30px;
+    text-decoration: none;
+  }
+  #overlay footer .image a.btn:hover,
+  #overlay-bg footer .image a.btn:hover {
+    background-color: black;
+  }
   #overlay section,
   #overlay-bg section {
     position: relative;
     background: white;
     z-index: 7;
     padding: 200px 0;
+    border-bottom: 1px solid #D8D8D8;
+    border-top: 1px solid white;
   }
-  #overlay section.row1,
-  #overlay-bg section.row1 {
+  #overlay section:nth-of-type(even),
+  #overlay-bg section:nth-of-type(even) {
+    background: #F9F9F9;
+    box-shadow: inset 0 -150px 390px rgba(208, 208, 208, 0.41);
+  }
+  #overlay section:nth-of-type(odd),
+  #overlay-bg section:nth-of-type(odd) {
+    background: white;
+    box-shadow: inset 0 -150px 390px rgba(208, 208, 208, 0.11);
+  }
+  #overlay section:first-child,
+  #overlay-bg section:first-child {
+    border-top-width: 0px;
+    box-shadow: none;
     background: transparent;
-  }
-  #overlay section.row2,
-  #overlay-bg section.row2 {
-    background-color: #efefef;
-  }
-  #overlay section.row2 .column,
-  #overlay-bg section.row2 .column {
-    margin-left: 0;
-  }
-  #overlay section.row3,
-  #overlay-bg section.row3 {
-    background-color: #E0E0E0;
   }
   #overlay section .column,
   #overlay-bg section .column,
@@ -445,6 +516,39 @@
   #overlay-bg section .image {
     clear: both;
   }
+  #overlay section.one-column,
+  #overlay-bg section.one-column {
+    overflow: hidden;
+  }
+  #overlay section.one-column .image,
+  #overlay-bg section.one-column .image,
+  #overlay section.one-column .column,
+  #overlay-bg section.one-column .column {
+    width: 100%;
+    float: none !important;
+    padding: 0 !important;
+  }
+  #overlay section.one-column .image,
+  #overlay-bg section.one-column .image {
+    border: 30px solid black;
+    border-radius: 30px;
+    border-right-width: 80px;
+    border-left-width: 80px;
+    margin: 0 -80px 60px !important;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+  }
+  #overlay section.one-column .column p,
+  #overlay-bg section.one-column .column p {
+    float: left;
+    width: 46%;
+    margin-right: 4%;
+  }
+  #overlay section.one-column .column p:last-child,
+  #overlay-bg section.one-column .column p:last-child {
+    margin: 0 0 0 4%;
+  }
   #overlay section.left,
   #overlay-bg section.left {
     overflow: hidden;
@@ -454,12 +558,12 @@
   #overlay section.left h1,
   #overlay-bg section.left h1 {
     float: left;
-    padding-right: 25px;
+    padding-right: 50px;
   }
   #overlay section.left .image,
   #overlay-bg section.left .image {
     float: right;
-    padding-left: 25px;
+    padding-left: 50px;
   }
   #overlay section.left .image img,
   #overlay-bg section.left .image img {
@@ -474,12 +578,12 @@
   #overlay section.right h1,
   #overlay-bg section.right h1 {
     float: right;
-    padding-left: 25px;
+    padding-left: 50px;
   }
   #overlay section.right .image,
   #overlay-bg section.right .image {
     float: left;
-    padding-right: 25px;
+    padding-right: 50px;
   }
   #overlay section .column p,
   #overlay-bg section .column p {
@@ -494,7 +598,7 @@
     font-size: 20px;
     text-transform: none;
     color: black;
-    font-size: 40px;
+    font-size: 37px;
     margin: 0 0 20px;
   }
   #overlay #close,
@@ -859,8 +963,9 @@
     -webkit-transition: transform 2s ease-out;
     /* Safari */
     transition: transform 2s ease-out;
-    transform-origin: 50% 50%;
     transform: matrix(1, 0, 0, 1, 0, 80) scale(0);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
   }
   #contact #cloud circle:nth-of-type(8n+1),
   #contact #rocket circle:nth-of-type(8n+1),
@@ -1191,6 +1296,23 @@
   }
 }
 @media screen and (max-width: 700px) {
+  #overlay footer .image,
+  #overlay-bg footer .image,
+  #overlay footer .column,
+  #overlay-bg footer .column {
+    width: 100%;
+    float: none;
+    padding: 0 30px;
+  }
+  #overlay footer .image a.btn,
+  #overlay-bg footer .image a.btn,
+  #overlay footer .column a.btn,
+  #overlay-bg footer .column a.btn {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 700px) {
   #overlay section.row1,
   #overlay-bg section.row1 {
     background: white;
@@ -1366,6 +1488,7 @@
 }
 @media print {
   hr,
+  #overlay,
   #close,
   svg,
   img,

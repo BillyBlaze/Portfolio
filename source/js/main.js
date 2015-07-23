@@ -289,13 +289,12 @@
             },
 
             scroll: function(e) {
+
                 var target = {
                     window: $(window),
                     scroller: $(window),
                     document: $(document)
                 };
-
-                this.isMouseWheel = true;
 
                 // Disable smoothscrolling in overlay/modal
                 if($('body').hasClass("noScroll")) {
@@ -304,10 +303,12 @@
 
                 // Stop default scrolling
                 e.preventDefault();
+                this.isMouseWheel = true;
 
                 var self = this,
                     scrollTop = self.options.scroll.chainScrollTop || target.window.scrollTop(),
-                    finalScroll = scrollTop - parseInt(e.deltaY * 150);
+                    finalScroll = scrollTop - parseInt((e.deltaY < 0) ? -150 : 150);
+                    // finalScroll = scrollTop - parseInt(e.deltaY * e.deltaFactor);
 
                 // Save finalScroll to variable so we can chain multiple scroll wheels
                 self.options.scroll.chainScrollTop = ( finalScroll <= 0 || finalScroll >= (target.document.height() - target.window.height()) ) ? self.options.scroll.chainScrollTop : finalScroll;
@@ -323,10 +324,10 @@
                 TweenMax.to(target.window, 0.5, {
                     scrollTo: {
                         y: finalScroll,
-                        autoKill: true
+                        autoKill: false
                     },
-                    ease: Power1.easeOut,
-                    autoKill: true,
+                    // ease: Power1.easeOut,
+                    ease: Power2.easeOut,
                     overwrite: 1,//Do not "preexist" animations, just kill it (with fire!)
                     onComplete: function() {
                         self.options.scroll.chainScrollTop = target.window.scrollTop(); // Set chainScrollTop with current scrollTop just to be safe
@@ -342,7 +343,7 @@
                     this.options.scroll.chainScrollTop = $(window).scrollTop(); // Set chainScrollTop with current scrollTop
                 }
 
-            },
+            }
 
         }
 

@@ -1,38 +1,52 @@
 {
-    "project": "De Digitale Gesprekscyclus",
+    "project": "Competentie Thermometer",
     "sections": [
         {
             "class": "two-columns right",
-            "title": "De Digitale Gesprekscyclus",
+            "title": "Competentie Thermometer",
             "content": [
-                "The 'Digitale Gesprekscyclus' is a web-based HRM application made for organisations to keep track of their employees goals, performance, assessment, competencies and development.",
-                "I was solely responsible for all the front-end and the integration of it into a templating system.",
+                "The 'Competentie Thermometer' is a web-based iPad application made for taking assessments from teachers and to generate a full report based on observations and questions from the assessor.",
+                "I was solely responsible for the web-based iPad application. It had to work offline, and we where able to meet those specifications through - then - new technologies such as manifest and localstorage.",
                 "This project was built entirly from scratch with alot of coffee and (freelance) backenders. The website itself was integrated into a CMS named MODx."
             ]
         },{
-            "class": "two-columns left",
-            "title": "Tailor made",
+            "class": "one-column",
+            "title": "A new challange",
             "content": [
-                "When this project was in production there where only two major javascript libraries avaliable, with very little to no solid plugins. Therefor all javascript had to be tailor made, with ofcourse one of the two libraries. Since MooTools coding philosophy was object orientated we decided togo with this option.",
-                "All javascript errors where connected to an error logger, so we could be on top of any issue. This would provide us very usefull when working with organisations that would use Citrix with outdated software and would give us realtime feedback on the quality of the codes."
+                "At the start of this project the partner of my boss had all his ideas in a spreadsheet, which would be great but not workable. I requested that we had to make a simple translation to an UX design before we start coding anything.",
+                "In the meantime I could pick up a new challange to work with - then - new technologies such as Manifest and LocalStorage. The whole concept was based on the iPad1, which back then wasn't always connected to the internet."
             ],
-            "image": "img/portfolio/ddgc/organisatie-beheer.png"
+            "image": "img/portfolio/ct/ipad.gif"
+        },{
+            "class": "two-columns left",
+            "title": "New Framework? or..",
+            "content": [
+                "We also had to make a big decision in what framework whe would use, the main competenters where: 'jQeury Mobile', 'Sencha Touch 1' and 'Vanilla'.",
+                "jQuery Mobile was not to be confused with the jQuery team, it was a plugin. Vanilla scriting would also not be usefull since it would require alot of coding.",
+                "Sencha Touch seemed more and more like the real deal, it was really proffesional, it looked stable, it had an active community and didn't require any external plugins to make our project work."
+            ],
+            "image": "img/portfolio/ct/login.png"
         },{
             "class": "two-columns right",
-            "title": "Don't Repeat Yourself",
+            "title": "Manifest",
             "content": [
-                "The back-end of the application was written in Symfony2 and would use thier templating system named Twig. After learning the in's and out's of this template system I integrated all HTML into a DRY format. This would be very usefull for upgrading codes to a new format.",
-                "The admin section of the application was later upgraded with bootstrap and fontawesome, this would provide very usefull when upgrading and changing deprecated functions or namespaces."
+                "Manifest can be very tricky and dangerous, if an update is released with a bug it would result in white screens for customers and require 2 refreshes to get it back working after a fix has been released.",
+                "Luckly I can say with pride that I setup a good release process so that there was never once a problem with a new release. I also took precaution steps to make sure the manifest runtime was standalone from the main application."
             ],
-            "image": "img/swordfish_ii.svg"
+            "image": "img/portfolio/ct/manifest.png"
         },{
             "class": "two-columns left",
-            "title": "Highcharts",
+            "title": "An update that never came...",
             "content": [
-                "After a while we add new features such as highcharts to give clients a very detailed report of their organisation or deparment.",
-                "We used the theming function so we also where able to upgrade highcharts with ease, it uses the MooTools adapter and is able to use public functions from the main javascript."
+                "After 4 years of running with Sencha Touch 1 and 1.2, we looked at new oppurtities to upgrade the application to a new level. AngularJS was upcoming and looked very 'promising', it also would fit with the new idea to 'bring your own device', rather then relying on the iPad.",
+                "We made a proof of concept with AngularJS and together with PouchDB we could make the same results but this time with a bit more normal HTML and CSS and less complicated codes to make it work, which would result in better performance since Sencha Touch was not strong in this compared to AngularJS.."
             ],
-            "image": "img/portfolio/ddgc/analyse-mc.png"
+            "image": "img/portfolio/ct/angularjs.svg"
         }
-    ]
+    ],
+    "summary": {
+        "skills": ["HTML5", "SASS", "Sencha Touch", "Offline compatible", "Twig", "Google Closure", "Bootstrap", "Highcharts", "MODx", "AngularJS", "PouchDB"],
+        "website": "http://www.ctmeter.nl/",
+        "app": "https://app.ctmeter.nl/"
+    }
 }

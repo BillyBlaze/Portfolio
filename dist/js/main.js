@@ -363,13 +363,12 @@
             },
 
             scroll: function(e) {
+
                 var target = {
                     window: $(window),
                     scroller: $(window),
                     document: $(document)
                 };
-
-                this.isMouseWheel = true;
 
                 // Disable smoothscrolling in overlay/modal
                 if($('body').hasClass("noScroll")) {
@@ -378,10 +377,12 @@
 
                 // Stop default scrolling
                 e.preventDefault();
+                this.isMouseWheel = true;
 
                 var self = this,
                     scrollTop = self.options.scroll.chainScrollTop || target.window.scrollTop(),
-                    finalScroll = scrollTop - parseInt(e.deltaY * 150);
+                    finalScroll = scrollTop - parseInt((e.deltaY < 0) ? -150 : 150);
+                    // finalScroll = scrollTop - parseInt(e.deltaY * e.deltaFactor);
 
                 // Save finalScroll to variable so we can chain multiple scroll wheels
                 self.options.scroll.chainScrollTop = ( finalScroll <= 0 || finalScroll >= (target.document.height() - target.window.height()) ) ? self.options.scroll.chainScrollTop : finalScroll;
@@ -397,10 +398,10 @@
                 TweenMax.to(target.window, 0.5, {
                     scrollTo: {
                         y: finalScroll,
-                        autoKill: true
+                        autoKill: false
                     },
-                    ease: Power1.easeOut,
-                    autoKill: true,
+                    // ease: Power1.easeOut,
+                    ease: Power2.easeOut,
                     overwrite: 1,//Do not "preexist" animations, just kill it (with fire!)
                     onComplete: function() {
                         self.options.scroll.chainScrollTop = target.window.scrollTop(); // Set chainScrollTop with current scrollTop just to be safe
@@ -416,7 +417,7 @@
                     this.options.scroll.chainScrollTop = $(window).scrollTop(); // Set chainScrollTop with current scrollTop
                 }
 
-            },
+            }
 
         }
 
@@ -447,17 +448,6 @@
             overlayFill: {
                 fill: "#000"
             }
-
-        },
-
-        modal: {
-
-            content: null,
-            inner: null,
-            background: null,
-            close: null,
-
-            isOpen: false,
 
         },
 
@@ -494,6 +484,13 @@
 
         modal: {
 
+            content: null,
+            inner: null,
+            background: null,
+            close: null,
+
+            isOpen: false,
+
             init: function() {
                 var self = this;
 
@@ -517,6 +514,9 @@
                     this.modal.close = $("<div></div>").attr("id", "close").text("X").insertBefore(this.modal.inner);
                 }
 
+                // Check if we need to realign the active frame
+                $(window).on('resize', this.events.resize.bind(this));
+
                 // Loop through all svg and add the overlay function
                 $('.frame a svg').each(function(ind, elm) {
 
@@ -528,6 +528,15 @@
                         fill = self.canvas.overlay[ind].rect(-50, -50, 702+100, 413+100).attr(self.attributes.rectFill),
                         loadFill = self.canvas.overlay[ind].rect(-50, -50, 702+100, 413+100).attr(self.attributes.rectFill),
                         bg = self.canvas.overlay[ind].rect(-50, -50, 702+100, 413+100).attr(self.attributes.overlayFill);
+
+                    // Center text
+                    var centeredText = text.getBBox().width / 2;
+                    text.attr({
+                        x: 351 - centeredText
+                    });
+                    textWhite.attr({
+                        x: 351 - centeredText
+                    });
 
                     // Group cicles
                     var bgGroup = self.canvas.overlay[ind].group(fill, text),
@@ -550,14 +559,8 @@
                     });
 
                     // Center text
-                    text.attr({
-                        x: 351 - (text.getBBox().width/2)
-                    });
-                    textWhite.attr({
-                        x: 351 - (textWhite.getBBox().width/2)
-                    });
                     loadText.attr({
-                        x: 351 - (loadText.getBBox().width/2)
+                        x: 351 - (loadText.getBBox().width / 2)
                     });
 
                     var bbox = textWhite.getBBox();
@@ -586,6 +589,19 @@
         tween: {},
         events: {
 
+            resize: function() {
+
+                if( this.modal.isOpen ) {
+                    var $browserFrame = $('.browser.main.active');
+
+                    $('html, body').animate({
+                        scrollTop: $browserFrame.offset().top - (($('#overlay section.row1').outerHeight() - $browserFrame.height()) / 2)
+                    }, 100);
+
+                }
+
+            },
+
             preload: function( browserFrameUrl ) {
                 var self = this,
                     elm = $("[href='" + browserFrameUrl + "']"),
@@ -596,13 +612,14 @@
                 elm.parents("[id]").addClass('active');
 
                 self.modal.inner.html("");
-                loader.text("Loading images");
+                loader.text("Loading meta data");
 
                 self.request = $.ajax(self.baseHref + browserFrameUrl.slice(0, -1) + ".json")
                     .done(function(response) {
 
                         var i = 1,
                             images = 0;
+
                         $(response.sections).each(function(ind, obj) {
 
                             var section = $("<section></section>"),
@@ -613,9 +630,17 @@
 
                             section.addClass("row" + (ind + 1) + " " + obj.class).appendTo(self.modal.inner);
                             content.addClass("content").appendTo(section);
-                            title.appendTo(content).text(obj.title);
+
+                            if(obj.class != "one-column") {
+                                title.appendTo(content).text(obj.title);
+                            }
 
                             columnImage.addClass("image").appendTo(content);
+
+                            if(obj.class == "one-column") {
+                                title.appendTo(content).text(obj.title);
+                            }
+
                             column.addClass("column").appendTo(content);
 
                             if(obj.image !== null && obj.image !== undefined) {
@@ -645,6 +670,24 @@
                             }
 
                         });
+
+                        // Footer
+                        var section = $("<footer></footer>"),
+                            content = $("<div></div>"),
+                            column = $("<div></div>"),
+                            columnImage = $("<div></div>");
+
+                        section.addClass("footer").appendTo(self.modal.inner);
+                        content.addClass("content").appendTo(section);
+
+                        column.addClass("column").appendTo(content);
+                        columnImage.addClass("image").appendTo(content);
+
+                        $('<h1></h1>').text("Skills used").appendTo(column);
+                        $(response.summary.skills).each(function(ind, obj) {
+                            $('<div></div>').addClass("tag").text(obj).appendTo(column);
+                        });
+                        $('<a></a>').attr("href", response.summary.website).addClass("btn").text("Learn more").appendTo(columnImage);
 
                         loader.text("Loading images (1 of "+images+")");
                         loader.attr({
