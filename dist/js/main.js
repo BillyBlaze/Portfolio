@@ -401,7 +401,7 @@
                         autoKill: false
                     },
                     // ease: Power1.easeOut,
-                    ease: Power2.easeOut,
+                    ease: ( typeof InstallTrigger !== 'undefined' ) ? Power2.easeOut : Power1.easeOut, //Firefox likes Power2, Chrome likes Power1
                     overwrite: 1,//Do not "preexist" animations, just kill it (with fire!)
                     onComplete: function() {
                         self.options.scroll.chainScrollTop = target.window.scrollTop(); // Set chainScrollTop with current scrollTop just to be safe
