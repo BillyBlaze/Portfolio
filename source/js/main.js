@@ -33,30 +33,22 @@
 
             // Setup all scenes
             this.scene.intro.call(this);
-            this.scene.background.call(this);
+            if( !('ontouchstart' in document.documentElement) ) {
+                this.scene.background.call(this);
+            }
             this.scene.portfolio.call(this);
             this.scene.about.call(this);
             this.scene.skills.call(this);
             this.scene.cv.call(this);
             this.scene.footer.call(this);
 
-            // If not mobile, resize header onResize
+            // If not mobile, resize header onResize and add scroll
             if( !('ontouchstart' in document.documentElement) ) {
                 $(window).on('resize', this.events.resizeHeader).trigger('resize');
+
+                $(document).mousewheel(this.events.scroll.bind(this));
+                $(document).on('scroll', this.events.scrollNonWheel.bind(this));
             }
-
-            // Make scroll steps animated in webkit / IE browsers if mousewheel is used
-            // if(
-            //     (
-            //         /chrom(e|ium)/.test(navigator.userAgent.toLowerCase()) ||
-            //         /trident/.test(navigator.userAgent.toLowerCase())
-            //     ) &&
-            //     !('ontouchstart' in document.documentElement)
-            // ) {
-            // }
-
-            $(document).mousewheel(this.events.scroll.bind(this));
-            $(document).on('scroll', this.events.scrollNonWheel.bind(this));
 
             $(window).resize(function() {
 
@@ -255,10 +247,21 @@
 
                 $("#contact").on("cloudLoaded", function(e, $elm) {
 
-                    var hr = $("<hr/>").insertAfter("#contact");
+                    var hr = $("<hr/>").insertAfter("#contact"),
+                        tweens = [];
 
-                    self.scenes.footer = new ScrollMagic.Scene({triggerElement: hr[0], triggerHook: "onEnter", duration: 0, offset: -70})
-                        .setClassToggle($elm, "active")
+                    $("#cloud circle, #cloud ellipse").each(function(ind, elm) {
+                        var width = $(elm).width() / 2,
+                            duration = Math.floor(Math.random() * (4 - 2)) + 2;
+
+                        $(elm).attr("transform-origin", [width, width]);
+                        tweens.push(TweenMax.fromTo(elm, duration, {transform: "matrix(0, 0, 0, 0, 0, 170)"}, {transform: "matrix(1, 0, 0, 1, 0, 0)", ease: Ease.easeOutIn}))
+                    });
+
+                    self.tweens.clouds = new TimelineMax().add(tweens);
+
+                    self.scenes.clouds = new ScrollMagic.Scene({triggerElement: hr[0], triggerHook: "onEnter", duration: 0, offset: -70})
+                        .setTween(self.tweens.clouds)
                         .addTo(self.controller);
 
                 });

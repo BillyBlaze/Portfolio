@@ -950,76 +950,14 @@
     width: 60%;
     height: 460px;
   }
+  #contact #cloud {
+    width: 740px;
+  }
   #contact #cloud,
   #contact #rocket {
     position: absolute;
     bottom: 0;
     left: -20%;
-  }
-  #contact #cloud circle,
-  #contact #rocket circle,
-  #contact #cloud ellipse,
-  #contact #rocket ellipse {
-    -webkit-transition: transform 2s ease-out;
-    /* Safari */
-    transition: transform 2s ease-out;
-    transform: matrix(1, 0, 0, 1, 0, 80) scale(0);
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-  }
-  #contact #cloud circle:nth-of-type(8n+1),
-  #contact #rocket circle:nth-of-type(8n+1),
-  #contact #cloud ellipse:nth-of-type(8n+1),
-  #contact #rocket ellipse:nth-of-type(8n+1) {
-    transition-duration: 2.5s;
-  }
-  #contact #cloud circle:nth-of-type(8n+2),
-  #contact #rocket circle:nth-of-type(8n+2),
-  #contact #cloud ellipse:nth-of-type(8n+2),
-  #contact #rocket ellipse:nth-of-type(8n+2) {
-    transition-duration: 2s;
-  }
-  #contact #cloud circle:nth-of-type(8n+3),
-  #contact #rocket circle:nth-of-type(8n+3),
-  #contact #cloud ellipse:nth-of-type(8n+3),
-  #contact #rocket ellipse:nth-of-type(8n+3) {
-    transition-duration: 1.5s;
-  }
-  #contact #cloud circle:nth-of-type(8n+4),
-  #contact #rocket circle:nth-of-type(8n+4),
-  #contact #cloud ellipse:nth-of-type(8n+4),
-  #contact #rocket ellipse:nth-of-type(8n+4) {
-    transition-duration: 2.2s;
-  }
-  #contact #cloud circle:nth-of-type(8n+5),
-  #contact #rocket circle:nth-of-type(8n+5),
-  #contact #cloud ellipse:nth-of-type(8n+5),
-  #contact #rocket ellipse:nth-of-type(8n+5) {
-    transition-duration: 1.2s;
-  }
-  #contact #cloud circle:nth-of-type(8n+6),
-  #contact #rocket circle:nth-of-type(8n+6),
-  #contact #cloud ellipse:nth-of-type(8n+6),
-  #contact #rocket ellipse:nth-of-type(8n+6) {
-    transition-duration: 1.8s;
-  }
-  #contact #cloud circle:nth-of-type(8n+7),
-  #contact #rocket circle:nth-of-type(8n+7),
-  #contact #cloud ellipse:nth-of-type(8n+7),
-  #contact #rocket ellipse:nth-of-type(8n+7) {
-    transition-duration: 2.3s;
-  }
-  #contact #cloud circle:nth-of-type(8n+8),
-  #contact #rocket circle:nth-of-type(8n+8),
-  #contact #cloud ellipse:nth-of-type(8n+8),
-  #contact #rocket ellipse:nth-of-type(8n+8) {
-    transition-duration: 1.9s;
-  }
-  #contact #cloud.active circle,
-  #contact #rocket.active circle,
-  #contact #cloud.active ellipse,
-  #contact #rocket.active ellipse {
-    transform: matrix(1, 0, 0, 1, 0, 0) scale(1);
   }
   .browser {
     width: 100%;
