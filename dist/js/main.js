@@ -400,7 +400,6 @@
                         y: finalScroll,
                         autoKill: false
                     },
-                    // ease: Power1.easeOut,
                     ease: ( typeof InstallTrigger !== 'undefined' ) ? Power2.easeOut : Power1.easeOut, //Firefox likes Power2, Chrome likes Power1
                     overwrite: 1,//Do not "preexist" animations, just kill it (with fire!)
                     onComplete: function() {
