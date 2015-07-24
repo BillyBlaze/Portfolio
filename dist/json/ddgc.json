@@ -7,31 +7,31 @@
             "content": [
                 "The 'Digitale Gesprekscyclus' is a web-based HRM application made for organisations to keep track of their employees goals, performance, assessment, competencies and development.",
                 "I was solely responsible for all the front-end and the integration of it into a templating system.",
-                "This project was built entirly from scratch with alot of coffee and (freelance) backenders. The website itself was integrated into a CMS named MODx."
+                "This project was built entirely from scratch with a lot of coffee and (freelance) back-enders. The website itself was integrated into a CMS named MODx."
             ]
         },{
             "class": "two-columns left",
             "title": "Tailor made",
             "content": [
-                "When this project was in production there where only two major javascript libraries avaliable, with very little to no solid plugins. Therefor all javascript had to be tailor made, with ofcourse one of the two libraries. Since MooTools coding philosophy was object orientated we decided togo with this option.",
-                "All javascript errors where connected to an error logger, so we could be on top of any issue. This would provide us very usefull when working with organisations that would use outdated software (e.g. Citrix) and would give us realtime feedback on the quality of the codes."
+                "When this project was in production there where only two major javascript libraries available, with very little to no solid plugins. Therefor all javascript had to be tailor made, with of course one of the two libraries. Since MooTools coding philosophy was object orientated we decided to go with this option.",
+                "All javascript errors where connected to an error logger, so we could be on top of any issue. This would provide us very useful when working with organisations that would use outdated software (e.g. Citrix) and would give us real-time feedback on the quality of the codes."
             ],
             "image": "img/portfolio/ddgc/organisatie-beheer.png"
         },{
             "class": "two-columns right",
             "title": "Don't Repeat Yourself",
             "content": [
-                "The back-end of the application was written in Symfony2 and would use thier templating system named Twig. After learning the in's and out's of this template system I integrated all HTML into a DRY format. This would be very usefull for upgrading codes to a new format.",
-                "The admin section of the application was later upgraded with Bootstrap and FontAwesome, this would provide very usefull when upgrading and changing deprecated functions or namespaces."
+                "The back-end of the application was written in Symfony2 and would use their template system named Twig. After learning the in's and out's of this template system I integrated all HTML into a DRY format. This would be very useful for upgrading codes to a new format.",
+                "The admin section of the application was later upgraded with Bootstrap and FontAwesome, this would provide very useful when upgrading and changing deprecated functions or namespaces."
             ],
             "image": "img/portfolio/ddgc/dry.png"
         },{
             "class": "two-columns left",
             "title": "New features",
             "content": [
-                "After a while we added new features such as highcharts to give clients a very detailed report of their organisation or deparment.",
+                "After a while we added new features such as highcharts to give clients a very detailed report of their organisation or department.",
                 "We used the theming function so we also where able to upgrade highcharts with ease, it uses the MooTools adapter and is able to use public functions from the main javascript.",
-                "We also integrated a form builder, where customers could setup their own methods, questions and requirments to meet there goals."
+                "We also integrated a form builder, where customers could setup their own methods, questions and requirements to meet there goals."
             ],
             "image": "img/portfolio/ddgc/analyse-mc.png"
         }

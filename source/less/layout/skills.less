@@ -7,15 +7,11 @@
     padding: 0;
     min-height: 600px;
 
+    @media (max-width: @screen-xs-max) {
+          margin: 40px auto 0;
+    }
+
     .main {
-        // border-radius: 50%;
-        // width: 200px;
-        // height: 200px;
-        // margin: -100px 0 0 -100px;
-        // position: absolute;
-        // top: 50%;
-        // left: 50%;
-        // z-index:4;
 
         h1 {
             display: none;
@@ -42,10 +38,14 @@
             overflow: hidden;
 
             > li {
-                .make-xs-column(12);
-                .make-sm-column(6);
-                .make-md-column(3);
                 padding: 0;
+                float: none;
+                width: 100%;
+
+                @media (min-width: 400px) {
+                    float: left;
+                    width: 50%;
+                }
 
                 ul {
                     list-style: none;
