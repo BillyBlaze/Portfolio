@@ -55,7 +55,15 @@
                     background: rgba(0,0,0,0.6);
                     padding: 20px;
 
-                    transition: right 0.3s ease-in-out, left 0.3s ease-in-out;
+                    transition: right 0.3s ease-in-out, left 0.3s ease-in-out, opacity 0.5s;
+
+                    @media (min-width: 2300px) {
+                        opacity: 0;
+
+                        &.active {
+                            opacity: 1;
+                        }
+                    }
 
                     @media (min-width: @screen-sm-min) {
                         &.left {

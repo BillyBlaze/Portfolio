@@ -848,7 +848,7 @@
     position: relative;
     background: rgba(0, 0, 0, 0.6);
     padding: 20px;
-    transition: right 0.3s ease-in-out, left 0.3s ease-in-out;
+    transition: right 0.3s ease-in-out, left 0.3s ease-in-out, opacity 0.5s;
   }
   #cv #timeline ol li section:after {
     content: "";
@@ -1307,6 +1307,14 @@
   #skills > svg#skillsOrbit.active {
     width: 150% !important;
     left: -25% !important;
+  }
+}
+@media screen and (min-width: 2300px) {
+  #cv #timeline ol li section {
+    opacity: 0;
+  }
+  #cv #timeline ol li section.active {
+    opacity: 1;
   }
 }
 @media screen and (min-width: 768px) {
