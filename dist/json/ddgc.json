@@ -13,8 +13,8 @@
             "class": "two-columns left",
             "title": "Tailor made",
             "content": [
-                "When this project was in production there where only two major javascript libraries available, with very little to no solid plugins. Therefor all javascript had to be tailor made, with of course one of the two libraries. Since MooTools coding philosophy was object orientated we decided to go with this option.",
-                "All javascript errors where connected to an error logger, so we could be on top of any issue. This would provide us very useful when working with organisations that would use outdated software (e.g. Citrix) and would give us real-time feedback on the quality of the codes."
+                "When this project was in production there were only two major javascript libraries available, with very little to no solid plugins. Therefore all javascript had to be tailor made with one of the two libraries. Since MooTools coding philosophy was object orientated we decided to go with this option.",
+                "All javascript errors were connected to an error logger, so we could be on top of any issue. This would be us very useful when working with organisations that would use outdated software (e.g. Citrix) and would give us real-time feedback on the quality of the codes."
             ],
             "image": "img/portfolio/ddgc/organisatie-beheer.png"
         },{
@@ -22,7 +22,7 @@
             "title": "Don't Repeat Yourself",
             "content": [
                 "The back-end of the application was written in Symfony2 and would use their template system named Twig. After learning the in's and out's of this template system I integrated all HTML into a DRY format. This would be very useful for upgrading codes to a new format.",
-                "The admin section of the application was later upgraded with Bootstrap and FontAwesome, this would provide very useful when upgrading and changing deprecated functions or namespaces."
+                "The admin section of the application was later upgraded with Bootstrap and FontAwesome, this would be very useful when upgrading and changing deprecated functions or namespaces."
             ],
             "image": "img/portfolio/ddgc/dry.png"
         },{

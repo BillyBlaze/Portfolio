@@ -5,33 +5,33 @@
             "class": "two-columns right",
             "title": "Competentie Thermometer",
             "content": [
-                "The 'Competentie Thermometer' is a web-based iPad application made for taking assessments from teachers and to generate a full report based on observations and questions from the assessor.",
-                "I was solely responsible for the web-based iPad application. It had to work offline, and we where able to meet those specifications through - then - new technologies such as manifest and localstorage.",
+                "The 'Competentie Thermometer' is a web-based iPad application made for taking assessments from teachers which can be generated into written reports based on observations and questions from the assessor.",
+                "I was solely responsible for the web-based iPad application. It had to work offline, and we were able to meet those specifications through - then - new technologies such as manifest and localstorage.",
                 "This project was built entirely from scratch with a lot of coffee and (freelance) back-enders. The website itself was integrated into a CMS named MODx."
             ]
         },{
             "class": "one-column",
             "title": "A new challange",
             "content": [
-                "At the start of this project the partner of my boss had all his ideas in a spreadsheet, which would be great but not workable. I requested that we had to make a simple translation to an UX design before we start coding anything.",
-                "In the meantime I could pick up a new challenge to work with - then - new technologies such as Manifest and LocalStorage. The whole concept was based on the iPad1, which back then wasn't always connected to the internet."
+                "At the start of this project the business partner of my boss had all his ideas worked out in a spreadsheet, which is great but not convenient for development. Therefore I requested we first start the UX design before we start coding anything.",
+                "In the meantime I could pick up the new challenge to work with - then - new technologies such as Manifest and LocalStorage. The whole concept was based on the iPad1, which back then wasn't always connected to the internet."
             ],
             "image": "img/portfolio/ct/ipad.gif"
         },{
             "class": "two-columns left",
             "title": "New Framework? or..",
             "content": [
-                "We also had to make a big decision in what framework whe would use, the main competitors where: 'jQeury Mobile', 'Sencha Touch 1' and 'Vanilla'.",
-                "jQuery Mobile was not to be confused with the jQuery team, it was a plugin. Vanilla scriting would also not be usefull since it would require alot of coding.",
-                "Sencha Touch seemed more and more like the real deal, it is professional organisation, it looked stable, it had an active community and didn't require any external plugins to make our project work."
+                "We also had to make a big decision in what framework we would use, the main candidates were: 'jQeury Mobile', 'Sencha Touch 1' and 'Vanilla'.",
+                "jQuery Mobile was not to be confused with the jQuery team, it was a plugin. Vanilla scripting would be useless since it would require a lot of coding and testing.",
+                "Sencha Touch seemed more and more like the real deal, it's a professional organisation, it looked stable, it had an active community and didn't require any external plugins to make our project work."
             ],
             "image": "img/portfolio/ct/login.png"
         },{
             "class": "two-columns right",
             "title": "Manifest",
             "content": [
-                "Manifest can be very tricky and dangerous, if an update is released with a bug it would result in white screens for customers and require 2 refreshes to get it back working after a fix has been released.",
-                "Luckily I can say with full pride that I setup a good release process so that there was never once a problem with a new release. I also took precaution steps to make sure the manifest runtime was standalone from the main application."
+                "Manifest can be very tricky and dangerous. If an update with a bug is released, it would result in white screens for customers. After the release of a fix it requires 2 refreshes to get it back working.",
+                "Due to implementation of a structured release process, I prevented problems with new releases. I also took precautionary steps to make sure the manifest runtime was standalone from the main application."
             ],
             "image": "img/portfolio/ct/manifest.png"
         },{
@@ -39,7 +39,8 @@
             "title": "An update that never came...",
             "content": [
                 "After 4 years of running with Sencha Touch 1 and 1.2, we looked at new oppurtities to upgrade the application to a new level. AngularJS was upcoming and looked very 'promising', it also would fit with the new idea to 'bring your own device', rather then relying on the iPad.",
-                "We made a proof of concept with AngularJS and together with PouchDB we could make the same results but this time with a bit more normal HTML and CSS and less complicated codes to make it work, which would result in better performance since Sencha Touch was not strong in this compared to AngularJS.."
+                "We made a proof of concept with AngularJS and PouchDB, this had the same result in getting the required specifications. The results in performance was stunning and the complicated codes were replaced by beautifull HTML, CSS and javascript.",
+                "All codes were also written with a 'style guide', this would be useful for anyone new to the team or anyone taking over."
             ],
             "image": "img/portfolio/ct/angularjs.svg"
         }
