@@ -69,6 +69,15 @@ module.exports = function(grunt) {
                 ],
                 dest: 'dist/js/vendors.js',
             }
+        },
+
+        connect: {
+            server: {
+                options: {
+                    port: 8000,
+                    base: 'dist'
+                }
+            }
         }
 
     });
@@ -79,10 +88,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-connect');
 
     // Default task(s).
     grunt.registerTask('default', ['less', 'concat', 'uglify', 'cssmin']);
     grunt.registerTask('w', ['watch']);
     grunt.registerTask('c', ['concat']);
+    grunt.registerTask('serve', ['connect', 'watch']);
 
 };

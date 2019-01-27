@@ -1,5 +1,5 @@
 @media screen {
-  /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+  /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
   html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -89,7 +89,6 @@
     margin: 1em 40px;
   }
   hr {
-    -moz-box-sizing: content-box;
     box-sizing: content-box;
     height: 0;
   }
@@ -149,8 +148,6 @@
   }
   input[type="search"] {
     -webkit-appearance: textfield;
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
     box-sizing: content-box;
   }
   input[type="search"]::-webkit-search-cancel-button,
@@ -200,7 +197,7 @@
   }
   h1,
   text {
-    font-family: 'Megrim', cursive;
+    font-family: 'Megrim', monospace;
     font-size: 72px;
     text-transform: uppercase;
     color: white;
@@ -210,7 +207,7 @@
   }
   header h1,
   header h2 {
-    font-family: 'Megrim', cursive;
+    font-family: 'Megrim', monospace;
     font-size: 72px;
     text-transform: uppercase;
     color: white;
@@ -848,7 +845,8 @@
     position: relative;
     background: rgba(0, 0, 0, 0.6);
     padding: 20px;
-    transition: right 0.3s ease-in-out, left 0.3s ease-in-out, opacity 0.5s;
+    transition: transform 0.3s ease-in-out, opacity 0.5s;
+    will-change: transform;
   }
   #cv #timeline ol li section:after {
     content: "";
@@ -1306,6 +1304,9 @@
     float: left;
     width: 50%;
   }
+  #skills .main ol > li:nth-child(3) {
+    clear: left;
+  }
 }
 @media screen and (max-width: 1072px) {
   #skills > svg#skillsOrbit.active {
@@ -1324,10 +1325,10 @@
 @media screen and (min-width: 768px) {
   #cv #timeline ol li section.left {
     margin-right: 52%;
-    right: 100%;
+    transform: translateX(-51vw);
   }
   #cv #timeline ol li section.left.active {
-    right: 0%;
+    transform: translateX(0);
   }
   #cv #timeline ol li section.left:after {
     left: auto;
@@ -1337,10 +1338,10 @@
   }
   #cv #timeline ol li section.right {
     margin-left: 52%;
-    left: 100%;
+    transform: translateX(51vw);
   }
   #cv #timeline ol li section.right.active {
-    left: 0%;
+    transform: translateX(0);
   }
 }
 @media screen and (max-width: 991px) {
@@ -1615,7 +1616,7 @@
   }
   #skills {
     position: absolute;
-    top: 1150px;
+    top: 1350px;
     width: 100%;
   }
   #skills ol {

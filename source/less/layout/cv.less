@@ -55,7 +55,8 @@
                     background: rgba(0,0,0,0.6);
                     padding: 20px;
 
-                    transition: right 0.3s ease-in-out, left 0.3s ease-in-out, opacity 0.5s;
+                    transition: transform 0.3s ease-in-out, opacity 0.5s;
+                    will-change: transform;
 
                     @media (min-width: 2300px) {
                         opacity: 0;
@@ -68,10 +69,10 @@
                     @media (min-width: @screen-sm-min) {
                         &.left {
                             margin-right: 52%;
-                            right: 100%;
+                            transform: translateX(-51vw);
 
                             &.active {
-                                right: 0%;
+                                transform: translateX(0);
                             }
 
                             &:after {
@@ -83,10 +84,10 @@
                         }
                         &.right {
                             margin-left: 52%;
-                            left: 100%;
+                            transform: translateX(51vw);
 
                             &.active {
-                                left: 0%;
+                                transform: translateX(0);
                             }
                         }
                     }

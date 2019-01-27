@@ -310,7 +310,7 @@
 
                 var self = this,
                     scrollTop = self.options.scroll.chainScrollTop || target.window.scrollTop(),
-                    finalScroll = scrollTop - parseInt((e.deltaY < 0) ? -150 : 150);
+                    finalScroll = scrollTop - parseInt((e.deltaY < 0) ? -250 : 250);
                     // finalScroll = scrollTop - parseInt(e.deltaY * e.deltaFactor);
 
                 // Save finalScroll to variable so we can chain multiple scroll wheels

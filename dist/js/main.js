@@ -384,7 +384,7 @@
 
                 var self = this,
                     scrollTop = self.options.scroll.chainScrollTop || target.window.scrollTop(),
-                    finalScroll = scrollTop - parseInt((e.deltaY < 0) ? -150 : 150);
+                    finalScroll = scrollTop - parseInt((e.deltaY < 0) ? -250 : 250);
                     // finalScroll = scrollTop - parseInt(e.deltaY * e.deltaFactor);
 
                 // Save finalScroll to variable so we can chain multiple scroll wheels
@@ -698,7 +698,7 @@
 
                     })
                     .fail(function() {
-                        console.log( "error" );
+                        console.log(arguments);
                     });
 
             },
@@ -971,26 +971,29 @@
                 this.blackhole = this.canvas.main.circle("50%", "50%", 40).attr(this.attributes.blackhole);
 
                 // List of DOM IDs
-                this.idList = Array("frontend", "backend", "libraries", "tools");
+                this.idList = ["frontend", "libraries", "tools", "backend"];
 
                 // Create text node above a planet
-                this.texts[0] = this.canvas.texts.text(this.canvas.middleX, this.canvas.middleY, "Front-end").attr(this.attributes.planets.text);
-                this.texts[1] = this.canvas.texts.text(this.canvas.middleX, this.canvas.middleY, "Back-end").attr(this.attributes.planets.text);
-                this.texts[2] = this.canvas.texts.text(this.canvas.middleX, this.canvas.middleY, "Libraries").attr(this.attributes.planets.text);
-                this.texts[3] = this.canvas.texts.text(this.canvas.middleX, this.canvas.middleY, "Tools").attr(this.attributes.planets.text);
+                this.texts = [];
+                this.texts.push(this.canvas.texts.text(this.canvas.middleX, this.canvas.middleY, "Front-end").attr(this.attributes.planets.text));
+                this.texts.push(this.canvas.texts.text(this.canvas.middleX, this.canvas.middleY, "Libraries").attr(this.attributes.planets.text));
+                this.texts.push(this.canvas.texts.text(this.canvas.middleX, this.canvas.middleY, "Tools").attr(this.attributes.planets.text));
+                this.texts.push(this.canvas.texts.text(this.canvas.middleX, this.canvas.middleY, "Back-end").attr(this.attributes.planets.text));
 
                 // Create planets
-                this.planets[0] = this.canvas.planets.circle(this.canvas.middleX, this.canvas.middleY, 2).attr(this.attributes.planets.objects);
-                this.planets[1] = this.canvas.planets.circle(this.canvas.middleX, this.canvas.middleY, 2).attr(this.attributes.planets.objects);
-                this.planets[2] = this.canvas.planets.circle(this.canvas.middleX, this.canvas.middleY, 2).attr(this.attributes.planets.objects);
-                this.planets[3] = this.canvas.planets.circle(this.canvas.middleX, this.canvas.middleY, 2).attr(this.attributes.planets.objects);
+                this.planets = [];
+                this.planets.push(this.canvas.planets.circle(this.canvas.middleX, this.canvas.middleY, 2).attr(this.attributes.planets.objects));
+                this.planets.push(this.canvas.planets.circle(this.canvas.middleX, this.canvas.middleY, 2).attr(this.attributes.planets.objects));
+                this.planets.push(this.canvas.planets.circle(this.canvas.middleX, this.canvas.middleY, 2).attr(this.attributes.planets.objects));
+                this.planets.push(this.canvas.planets.circle(this.canvas.middleX, this.canvas.middleY, 2).attr(this.attributes.planets.objects));
 
                 // Create orbits paths
-                this.orbits[0] = this.canvas.planets.circlePath(this.canvas.middleX, this.canvas.middleY, 130, 1, 1).attr(this.attributes.planets.orbits);
-                this.orbits[1] = this.canvas.planets.circlePath(this.canvas.middleX, this.canvas.middleY, 175, 2, 2).attr(this.attributes.planets.orbits);
-                this.orbits[2] = this.canvas.planets.circlePath(this.canvas.middleX, this.canvas.middleY, 250, 3, 4).attr(this.attributes.planets.orbits);
-                this.orbits[3] = this.canvas.planets.circlePath(this.canvas.middleX, this.canvas.middleY, 290, 4, 5).attr(this.attributes.planets.orbits);
-                this.orbits[4] = this.canvas.planets.circlePath(this.canvas.middleX, this.canvas.middleY, 3000, 5, 200).attr(this.attributes.planets.orbits);
+                this.orbits = [];
+                this.orbits.push(this.canvas.planets.circlePath(this.canvas.middleX, this.canvas.middleY, 130, 1, 1).attr(this.attributes.planets.orbits));
+                this.orbits.push(this.canvas.planets.circlePath(this.canvas.middleX, this.canvas.middleY, 175, 2, 2).attr(this.attributes.planets.orbits));
+                this.orbits.push(this.canvas.planets.circlePath(this.canvas.middleX, this.canvas.middleY, 250, 3, 4).attr(this.attributes.planets.orbits));
+                this.orbits.push(this.canvas.planets.circlePath(this.canvas.middleX, this.canvas.middleY, 290, 4, 5).attr(this.attributes.planets.orbits));
+                this.orbits.push(this.canvas.planets.circlePath(this.canvas.middleX, this.canvas.middleY, 3000, 5, 200).attr(this.attributes.planets.orbits));
 
                 // Create animations along path
                 this.animations.orbit.call( this, 10000 * 20, this.planets[0], this.orbits[0], this.texts[0], 0, 200 );
