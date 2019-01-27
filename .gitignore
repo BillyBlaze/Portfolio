@@ -1,3 +1,4 @@
 node_modules/
 source/vendors/
 dist/img/
+yarn-error.log
